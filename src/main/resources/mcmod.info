@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "stimulus",
+    "name": "Stimulus",
+    "description": "Stimulate your blocks and make them work faster.",
+    "version": "0.0.1",
+    "mcversion": "1.10.2",
+    "url": "http://miningmark48.xyz",
+    "updateUrl": "",
+    "authorList": [
+      "MiningMark48"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

@@ -1,0 +1,9 @@
+itemGroup.stimulus=Stimulus
+
+#Items
+item.stimulator.name=Stimulator
+
+#Tooltips
+tooltip.item.hold=Hold
+tooltip.item.shift=Shift
+tooltip.item.stimulator.line1=Stimulates blocks to make them function faster.
