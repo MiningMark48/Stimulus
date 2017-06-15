@@ -3,8 +3,8 @@
     "modid": "stimulus",
     "name": "Stimulus",
     "description": "Stimulate your blocks and make them work faster.",
-    "version": "0.0.2",
-    "mcversion": "1.11.2",
+    "version": "1.0.0",
+    "mcversion": "1.12",
     "url": "http://miningmark48.xyz",
     "updateUrl": "",
     "authorList": [

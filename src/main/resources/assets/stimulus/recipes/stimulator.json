@@ -1,0 +1,22 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    " xy",
+    " zx",
+    "z  "
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:diamond_block"
+    },
+    "y": {
+      "item": "minecraft:nether_star"
+    },
+    "z": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "result": {
+    "item": "stimulus:stimulator"
+  }
+}
