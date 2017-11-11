@@ -1,6 +1,6 @@
 package com.miningmark48.stimulus.proxy;
 
-import com.miningmark48.stimulus.init.ModItems;
+import com.miningmark48.stimulus.init.ModRegistry;
 
 public class ClientProxy extends CommonProxy{
 
@@ -11,7 +11,7 @@ public class ClientProxy extends CommonProxy{
 
     @Override
     public void registerRenders(){
-        ModItems.registerRenders();
+        ModRegistry.registerRenderItems();
     }
 
 }

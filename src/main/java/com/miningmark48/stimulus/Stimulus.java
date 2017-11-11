@@ -2,6 +2,7 @@ package com.miningmark48.stimulus;
 
 import com.miningmark48.stimulus.handler.ConfigurationHandler;
 import com.miningmark48.stimulus.init.ModItems;
+import com.miningmark48.stimulus.init.ModRegistry;
 import com.miningmark48.stimulus.init.Recipes;
 import com.miningmark48.stimulus.proxy.CommonProxy;
 import com.miningmark48.stimulus.reference.Reference;
@@ -31,9 +32,10 @@ public class Stimulus {
 
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(new ConfigurationHandler());
+        MinecraftForge.EVENT_BUS.register(new ModRegistry());
 
         ModItems.init();
-        ModItems.register();
+        ModRegistry.init();
     }
 
     @EventHandler

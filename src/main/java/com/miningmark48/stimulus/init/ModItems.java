@@ -16,20 +16,4 @@ public class ModItems {
         stimulator = new ItemStimulator().setUnlocalizedName("stimulator").setRegistryName("stimulator").setCreativeTab(CreativeTabStimulus.Stimulus_TAB);
     }
 
-    public static void register(){
-        GameRegistry.register(stimulator);
-    }
-
-    public static void registerRenders(){
-        registerRender(stimulator);
-    }
-
-    public static void registerRender(Item item){
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reference.MOD_ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
-    }
-
-    public static void registerRender(Item item, int meta, String name){
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, meta, new ModelResourceLocation(Reference.MOD_ID + ":" + name, "inventory"));
-    }
-
 }
