@@ -1,12 +1,15 @@
 package com.miningmark48.stimulus.item;
 
 import com.miningmark48.stimulus.handler.ConfigurationHandler;
+import com.miningmark48.stimulus.init.ModItems;
 import com.miningmark48.stimulus.utility.KeyCheck;
 import com.miningmark48.stimulus.utility.Translate;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.InventoryHelper;
+import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -18,6 +21,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.items.ItemHandlerHelper;
+import org.lwjgl.Sys;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -52,18 +57,35 @@ public class ItemStimulator extends Item{
             Block block = state.getBlock();
             TileEntity te = world.getTileEntity(pos);
 
-            for (int i = 0; i < (ConfigurationHandler.tickAmount) / (te == null ? 5 : 1); i++) {
-                if (te == null) {
-                    block.updateTick(world, pos, state, this.random);
-                } else if ((te instanceof ITickable)) {
-                    ((ITickable)te).update();
+            if (player.inventory.hasItemStack(new ItemStack(ModItems.stimulator_charge))) {
+                ItemStack stack1 = ItemStack.EMPTY;
+                for (int i = 0; i <= player.inventory.getSizeInventory(); i++){
+                    if (player.inventory.getStackInSlot(i).getItem() instanceof ItemStimulatorCharge) {
+                        stack1 = player.inventory.getStackInSlot(i);
+                    }
+                }
+
+                if (stack1 != null && !stack1.isEmpty()) {
+
+                    int stimCharge = (stack1.hasTagCompound() ? stack1.getTagCompound().getInteger("charge") : 0);
+
+                    if (stimCharge >= 1) {
+                        for (int i = 0; i < (ConfigurationHandler.tickAmount) / (te == null ? 5 : 1); i++) {
+                            if (te == null) {
+                                block.updateTick(world, pos, state, this.random);
+                            } else if ((te instanceof ITickable)) {
+                                ((ITickable) te).update();
+                            }
+                        }
+                        if (te instanceof ITickable) {
+                            ((ITickable) te).update();
+                        }
+
+                        stack1.getTagCompound().setInteger("charge", stimCharge - 1);
+
+                    }
                 }
             }
-            if( te instanceof ITickable){
-                ((ITickable)te).update();
-            }
-
-            stack.damageItem(1, player);
 
         }
 

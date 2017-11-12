@@ -20,10 +20,12 @@ public class ModRegistry {
 
     private static void registerItems() {
         registerItem(ModItems.stimulator);
+        registerItem(ModItems.stimulator_charge);
     }
 
     public static void registerRenderItems() {
         registerItemRender(ModItems.stimulator);
+        registerItemRender(ModItems.stimulator_charge);
     }
 
     //Registry
