@@ -1,15 +1,13 @@
 package com.miningmark48.stimulus.item;
 
+import com.miningmark48.mininglib.utility.KeyChecker;
+import com.miningmark48.mininglib.utility.ModTranslate;
 import com.miningmark48.stimulus.handler.ConfigurationHandler;
 import com.miningmark48.stimulus.init.ModItems;
-import com.miningmark48.stimulus.utility.KeyCheck;
-import com.miningmark48.stimulus.utility.Translate;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.InventoryHelper;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -21,8 +19,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.items.ItemHandlerHelper;
-import org.lwjgl.Sys;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -34,15 +30,15 @@ public class ItemStimulator extends Item{
 
     public ItemStimulator(){
         setMaxStackSize(1);
-        setMaxDamage(ConfigurationHandler.durability);
     }
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World playerIn, List<String> tooltip, ITooltipFlag advanced) {
-        if (KeyCheck.isHoldingShift()) {
-            tooltip.add(Translate.toLocal("tooltip.item.stimulator.line1"));
+        if (KeyChecker.isHoldingShift()) {
+            tooltip.add(TextFormatting.DARK_GREEN + ModTranslate.toLocal("tooltip.item.stimulator.line1"));
+            tooltip.add(TextFormatting.YELLOW + new ItemStack(ModItems.stimulator_charge).getDisplayName() + ModTranslate.toLocal("tooltip.item.stimulator.line2"));
         }else{
-            tooltip.add(Translate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + Translate.toLocal("tooltip.item.shift"));
+            tooltip.add(ModTranslate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + ModTranslate.toLocal("tooltip.item.shift"));
         }
     }
 
@@ -86,7 +82,6 @@ public class ItemStimulator extends Item{
                     }
                 }
             }
-
         }
 
         return EnumActionResult.SUCCESS;

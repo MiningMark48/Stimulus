@@ -2,13 +2,19 @@ itemGroup.stimulus=Stimulus
 
 #Items
 item.stimulator.name=Stimulator
-item.stimulator_charge.name=Stimulator Charge
+item.stimulator_charge.name=Stimulator Battery
 
 #Tooltips
 tooltip.item.hold=Hold
 tooltip.item.shift=Shift
 tooltip.item.stimulator.line1=Stimulates blocks to make them function faster.
+tooltip.item.stimulator.line2= required.
 tooltip.item.stimulator_charge.line1.charge=Charge: 
 tooltip.item.stimulator_charge.line2.p1=Right click with 
 tooltip.item.stimulator_charge.line2.p2= in your inventory to add charge (+1).
 tooltip.item.stimulator_charge.line3=Sneak + Right click adds full stack.
+
+#Chat
+chat.item.stimulator_charge.added= charge added.
+chat.item.stimulator_charge.missingItem.p1=No 
+chat.item.stimulator_charge.missingItem.p2= in your inventory!

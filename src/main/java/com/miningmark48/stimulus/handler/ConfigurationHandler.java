@@ -1,10 +1,10 @@
 package com.miningmark48.stimulus.handler;
 
 import com.miningmark48.stimulus.reference.Reference;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import scala.Int;
 
 import java.io.File;
 
@@ -15,7 +15,9 @@ public class ConfigurationHandler {
     public static boolean hasRecipe;
     public static boolean useExpensiveRecipe;
     public static int tickAmount;
-    public static int durability;
+
+    public static int multiplier;
+    public static String consumeItem;
 
     public static void init(File configFile){
 
@@ -41,7 +43,9 @@ public class ConfigurationHandler {
         hasRecipe = configuration.getBoolean("Has recipe?", Configuration.CATEGORY_GENERAL, true, "Does the Stimulator have a recipe?");
         useExpensiveRecipe = configuration.getBoolean("Use Expensive Recipe", Configuration.CATEGORY_GENERAL, false, "Use the more expensive recipe.");
         tickAmount = configuration.getInt("Tick Amount", Configuration.CATEGORY_GENERAL, 25, 1, Integer.MAX_VALUE, "Amount of times the block is ticked.");
-        durability = configuration.getInt("Durability", Configuration.CATEGORY_GENERAL, 4096, -1, Integer.MAX_VALUE, "Durability of the item. Set to -1 for unbreakable.");
+
+        multiplier = configuration.getInt("Multiplier", Configuration.CATEGORY_GENERAL, 2, 1, Integer.MAX_VALUE, "Multiplier for the amount of charge applied per item.");
+        consumeItem = configuration.getString("Consume Item", Configuration.CATEGORY_GENERAL, "minecraft:diamond", "Item required for adding charge");
 
         if (configuration.hasChanged()){
             configuration.save();
