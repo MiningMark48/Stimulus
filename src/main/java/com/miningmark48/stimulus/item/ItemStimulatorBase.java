@@ -52,7 +52,7 @@ public abstract class ItemStimulatorBase extends Item {
             Block block = state.getBlock();
             TileEntity te = world.getTileEntity(pos);
 
-            if (player.inventory.hasItemStack(new ItemStack(ModItems.stimulator_charge))) {
+            if (player.inventory.hasItemStack(new ItemStack(ModItems.stimulator_charge)) || player.isCreative()) {
                 ItemStack stack1 = ItemStack.EMPTY;
                 for (int i = 0; i <= player.inventory.getSizeInventory(); i++){
                     if (player.inventory.getStackInSlot(i).getItem() instanceof ItemStimulatorCharge) {
@@ -60,11 +60,11 @@ public abstract class ItemStimulatorBase extends Item {
                     }
                 }
 
-                if (stack1 != null && !stack1.isEmpty()) {
+                if ((stack1 != null && !stack1.isEmpty() || player.isCreative())) {
 
                     int stimCharge = (stack1.hasTagCompound() ? stack1.getTagCompound().getInteger("charge") : 0);
 
-                    if (stimCharge >= 1) {
+                    if (stimCharge >= 1 || player.isCreative()) {
                         for (int i = 0; i < (tickAmount) / (te == null ? 5 : 1); i++) {
                             if (te == null) {
                                 block.updateTick(world, pos, state, this.random);
@@ -76,7 +76,7 @@ public abstract class ItemStimulatorBase extends Item {
                             ((ITickable) te).update();
                         }
 
-                        stack1.getTagCompound().setInteger("charge", stimCharge - 1);
+                        if (!player.isCreative()) stack1.getTagCompound().setInteger("charge", stimCharge - 1);
 
                     }
                 }
