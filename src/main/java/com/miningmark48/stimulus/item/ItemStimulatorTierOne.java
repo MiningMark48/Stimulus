@@ -11,17 +11,17 @@ import net.minecraft.world.World;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ItemStimulator extends ItemStimulatorBase{
+public class ItemStimulatorTierOne extends ItemStimulatorBase{
 
-    public ItemStimulator() {
-        super(ConfigurationHandler.tickAmount * 5);
+    public ItemStimulatorTierOne() {
+        super(ConfigurationHandler.tickAmount);
     }
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag advanced) {
         super.addInformation(stack, world, tooltip, advanced);
         if (KeyChecker.isHoldingShift()) {
-            tooltip.add(TextFormatting.GOLD + ModTranslate.toLocal("tooltip.item.stimulator_5.line1"));
+            tooltip.add(TextFormatting.GOLD + ModTranslate.toLocal("tooltip.item.stimulator_1.line1"));
         }
     }
 

@@ -19,11 +19,13 @@ public class ModRegistry {
     }
 
     private static void registerItems() {
+        registerItem(ModItems.stimulator_1);
         registerItem(ModItems.stimulator);
         registerItem(ModItems.stimulator_charge);
     }
 
     public static void registerRenderItems() {
+        registerItemRender(ModItems.stimulator_1);
         registerItemRender(ModItems.stimulator);
         registerItemRender(ModItems.stimulator_charge);
     }

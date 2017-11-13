@@ -1,6 +1,7 @@
 itemGroup.stimulus=Stimulus
 
 #Items
+item.stimulator_1.name=Stone Stimulator
 item.stimulator.name=Stimulator
 item.stimulator_charge.name=Stimulator Battery
 
@@ -9,6 +10,8 @@ tooltip.item.hold=Hold
 tooltip.item.shift=Shift
 tooltip.item.stimulator.line1=Stimulates blocks to make them function faster.
 tooltip.item.stimulator.line2= required.
+tooltip.item.stimulator_1.line1=The worst tier stimulator, still good though.
+tooltip.item.stimulator_5.line1=The top tier stimulator.
 tooltip.item.stimulator_charge.line1.charge=Charge: 
 tooltip.item.stimulator_charge.line2.p1=Right click with 
 tooltip.item.stimulator_charge.line2.p2= in your inventory to add charge (+1).
