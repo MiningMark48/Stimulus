@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "yxy",
+    "yzy",
+    "yxy"
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:redstone"
+    },
+    "y": {
+      "item": "minecraft:glowstone_dust"
+    },
+    "z": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "stimulus:stimulator_charge"
+  }
+}
