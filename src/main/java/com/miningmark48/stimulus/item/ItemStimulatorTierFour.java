@@ -14,7 +14,7 @@ import java.util.List;
 public class ItemStimulatorTierFour extends ItemStimulatorBase{
 
     public ItemStimulatorTierFour() {
-        super(ConfigurationHandler.tickAmount * 4);
+        super(ConfigurationHandler.tickAmount * 6);
     }
 
     @Override
