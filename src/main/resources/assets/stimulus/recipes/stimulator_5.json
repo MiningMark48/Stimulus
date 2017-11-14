@@ -10,7 +10,7 @@
       "item": "minecraft:emerald"
     },
     "y": {
-      "item": "minecraft:redstone"
+      "item": "stimulus:stimulation_dust"
     },
     "z": {
       "item": "minecraft:diamond"

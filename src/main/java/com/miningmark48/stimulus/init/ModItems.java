@@ -6,6 +6,7 @@ import net.minecraft.item.Item;
 
 public class ModItems {
 
+    public static Item stimulation_dust;
     public static Item stimulator_1;
     public static Item stimulator_2;
     public static Item stimulator_3;
@@ -16,6 +17,7 @@ public class ModItems {
     public static Item stimulator_charge;
 
     public static void init(){
+        stimulation_dust = new ItemStimulationDust().setUnlocalizedName("stimulation_dust").setRegistryName("stimulation_dust").setCreativeTab(CreativeTabStimulus.Stimulus_TAB);
         stimulator_1 = new ItemStimulatorTierOne().setUnlocalizedName("stimulator_1").setRegistryName("stimulator_1").setCreativeTab(CreativeTabStimulus.Stimulus_TAB);
         stimulator_2 = new ItemStimulatorTierTwo().setUnlocalizedName("stimulator_2").setRegistryName("stimulator_2").setCreativeTab(CreativeTabStimulus.Stimulus_TAB);
         stimulator_3 = new ItemStimulatorTierThree().setUnlocalizedName("stimulator_3").setRegistryName("stimulator_3").setCreativeTab(CreativeTabStimulus.Stimulus_TAB);

@@ -1,5 +1,6 @@
 package com.miningmark48.stimulus.item;
 
+import com.miningmark48.mininglib.base.item.ModBaseItem;
 import com.miningmark48.mininglib.utility.KeyChecker;
 import com.miningmark48.mininglib.utility.ModTranslate;
 import com.miningmark48.stimulus.init.ModItems;
@@ -7,7 +8,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumActionResult;
@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public abstract class ItemStimulatorBase extends Item {
+public abstract class ItemStimulatorBase extends ModBaseItem {
 
     private int tickAmount;
     private boolean isCreative;

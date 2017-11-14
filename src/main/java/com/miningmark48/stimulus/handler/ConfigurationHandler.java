@@ -17,7 +17,6 @@ public class ConfigurationHandler {
     public static int tickAmount;
 
     public static int multiplier;
-    public static String consumeItem;
 
     public static void init(File configFile){
 
@@ -45,7 +44,6 @@ public class ConfigurationHandler {
         tickAmount = configuration.getInt("Tick Amount Base", Configuration.CATEGORY_GENERAL, 5, 1, Integer.MAX_VALUE, "Amount of times the block is ticked.");
 
         multiplier = configuration.getInt("Multiplier", Configuration.CATEGORY_GENERAL, 2, 1, Integer.MAX_VALUE, "Multiplier for the amount of charge applied per item.");
-        consumeItem = configuration.getString("Consume Item", Configuration.CATEGORY_GENERAL, "minecraft:diamond", "Item required for adding charge");
 
         if (configuration.hasChanged()){
             configuration.save();

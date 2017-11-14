@@ -1,8 +1,10 @@
 package com.miningmark48.stimulus.item;
 
 import com.miningmark48.mininglib.utility.KeyChecker;
+import com.miningmark48.mininglib.utility.ModLogger;
 import com.miningmark48.mininglib.utility.ModTranslate;
 import com.miningmark48.stimulus.handler.ConfigurationHandler;
+import com.miningmark48.stimulus.init.ModItems;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -21,16 +23,12 @@ import java.util.List;
 
 public class ItemStimulatorCharge extends Item {
 
-    private ItemStack consumeItem = new ItemStack(Items.REDSTONE);
+    private ItemStack consumeItem;
     private int multiplier = ConfigurationHandler.multiplier;
 
     public ItemStimulatorCharge(){
         setMaxStackSize(1);
-
-        if (Item.getByNameOrId(ConfigurationHandler.consumeItem) != null){
-            consumeItem = new ItemStack(Item.getByNameOrId(ConfigurationHandler.consumeItem));
-        }
-
+        consumeItem = new ItemStack(ModItems.stimulation_dust);
     }
 
     @Override

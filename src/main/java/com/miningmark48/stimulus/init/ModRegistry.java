@@ -19,6 +19,7 @@ public class ModRegistry {
     }
 
     private static void registerItems() {
+        registerItem(ModItems.stimulation_dust);
         registerItem(ModItems.stimulator_1);
         registerItem(ModItems.stimulator_2);
         registerItem(ModItems.stimulator_3);
@@ -30,6 +31,7 @@ public class ModRegistry {
     }
 
     public static void registerRenderItems() {
+        registerItemRender(ModItems.stimulation_dust);
         registerItemRender(ModItems.stimulator_1);
         registerItemRender(ModItems.stimulator_2);
         registerItemRender(ModItems.stimulator_3);

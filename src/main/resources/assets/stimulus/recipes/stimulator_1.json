@@ -11,7 +11,7 @@
       "data": 0
     },
     "y": {
-      "item": "minecraft:redstone"
+      "item": "stimulus:stimulation_dust"
     },
     "z": {
       "item": "minecraft:cobblestone"

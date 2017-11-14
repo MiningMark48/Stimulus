@@ -1,6 +1,7 @@
 package com.miningmark48.stimulus;
 
 import com.miningmark48.stimulus.handler.ConfigurationHandler;
+import com.miningmark48.stimulus.handler.EventBlockBroken;
 import com.miningmark48.stimulus.init.ModItems;
 import com.miningmark48.stimulus.init.ModRegistry;
 import com.miningmark48.stimulus.init.Recipes;
@@ -37,6 +38,8 @@ public class Stimulus {
 
         ModItems.init();
         ModRegistry.init();
+
+        MinecraftForge.EVENT_BUS.register(new EventBlockBroken());
     }
 
     @EventHandler

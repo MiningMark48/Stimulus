@@ -10,7 +10,7 @@
       "item": "minecraft:gold_ingot"
     },
     "y": {
-      "item": "minecraft:redstone"
+      "item": "stimulus:stimulation_dust"
     },
     "z": {
       "item": "minecraft:iron_ingot"

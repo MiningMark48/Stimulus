@@ -9,6 +9,7 @@ item.stimulator_5.name=Emerald Stimulator
 item.stimulator.name=Stimulated Stimulator
 item.stimulator_creative.name=Creative Stimulator
 item.stimulator_charge.name=Stimulator Battery
+item.stimulation_dust.name=Stimulation Dust
 
 #Tooltips
 tooltip.item.hold=Hold
@@ -26,6 +27,7 @@ tooltip.item.stimulator_charge.line1.charge=Charge:
 tooltip.item.stimulator_charge.line2.p1=Right click with 
 tooltip.item.stimulator_charge.line2.p2= in your inventory to add charge (+1).
 tooltip.item.stimulator_charge.line3=Sneak + Right click adds full stack.
+tooltip.item.stimulation_dust.line1=Has a chance of dropping from Redstone Ore.
 
 #Chat
 chat.item.stimulator_charge.added= charge added.
