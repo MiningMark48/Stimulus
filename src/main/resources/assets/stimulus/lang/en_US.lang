@@ -6,7 +6,7 @@ item.stimulator_2.name=Iron Stimulator
 item.stimulator_3.name=Gold Stimulator
 item.stimulator_4.name=Diamond Stimulator
 item.stimulator_5.name=Emerald Stimulator
-item.stimulator.name=Stimulator
+item.stimulator.name=Stimulated Stimulator
 item.stimulator_charge.name=Stimulator Battery
 
 #Tooltips
