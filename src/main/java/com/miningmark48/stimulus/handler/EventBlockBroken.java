@@ -19,7 +19,6 @@ public class EventBlockBroken {
         if (block == Blocks.REDSTONE_ORE || block == Blocks.LIT_REDSTONE_ORE) {
             e.setDropChance(0.5f);
             e.getDrops().add(new ItemStack(ModItems.stimulation_dust, rand.nextInt(6) + 1));
-            ModLogger.info(e.getDropChance());
         }
 
     }
