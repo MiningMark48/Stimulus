@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " xy",
+    " zx",
+    "z  "
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:stone",
+      "data": 0
+    },
+    "y": {
+      "item": "minecraft:redstone"
+    },
+    "z": {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "result": {
+    "item": "stimulus:stimulator_1"
+  }
+}

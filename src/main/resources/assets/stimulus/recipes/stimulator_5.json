@@ -7,19 +7,19 @@
   ],
   "key": {
     "x": {
-      "item": "minecraft:obsidian"
+      "item": "minecraft:emerald"
     },
     "y": {
-      "item": "minecraft:nether_star"
+      "item": "minecraft:redstone"
     },
     "z": {
-      "item": "minecraft:diamond_block"
+      "item": "minecraft:diamond"
     },
     "a": {
-      "item": "stimulus:stimulator_5"
+      "item": "stimulus:stimulator_4"
     }
   },
   "result": {
-    "item": "stimulus:stimulator"
+    "item": "stimulus:stimulator_5"
   }
 }

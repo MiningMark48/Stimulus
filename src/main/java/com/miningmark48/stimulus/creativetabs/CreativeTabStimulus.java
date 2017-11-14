@@ -13,7 +13,7 @@ public class CreativeTabStimulus {
 
         @Override
         public ItemStack getTabIconItem() {
-            return new ItemStack(ModItems.stimulator);
+            return new ItemStack(ModItems.stimulator_6);
         }
 
     };
