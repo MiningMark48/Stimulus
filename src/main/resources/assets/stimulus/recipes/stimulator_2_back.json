@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "stimulus:stimulator_2"
+    }
+  ],
+  "result": {
+    "item": "stimulus:stimulator_1",
+    "count": 1
+  }
+}
