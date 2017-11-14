@@ -12,6 +12,7 @@ public class ModItems {
     public static Item stimulator_4;
     public static Item stimulator_5;
     public static Item stimulator_6;
+    public static Item stimulator_creative;
     public static Item stimulator_charge;
 
     public static void init(){
@@ -21,6 +22,7 @@ public class ModItems {
         stimulator_4 = new ItemStimulatorTierFour().setUnlocalizedName("stimulator_4").setRegistryName("stimulator_4").setCreativeTab(CreativeTabStimulus.Stimulus_TAB);
         stimulator_5 = new ItemStimulatorTierFive().setUnlocalizedName("stimulator_5").setRegistryName("stimulator_5").setCreativeTab(CreativeTabStimulus.Stimulus_TAB);
         stimulator_6 = new ItemStimulatorTierSix().setUnlocalizedName("stimulator").setRegistryName("stimulator").setCreativeTab(CreativeTabStimulus.Stimulus_TAB);
+        stimulator_creative = new ItemStimulatorCreative().setUnlocalizedName("stimulator_creative").setRegistryName("stimulator_creative").setCreativeTab(CreativeTabStimulus.Stimulus_TAB);
         stimulator_charge = new ItemStimulatorCharge().setUnlocalizedName("stimulator_charge").setRegistryName("stimulator_charge").setCreativeTab(CreativeTabStimulus.Stimulus_TAB);
     }
 

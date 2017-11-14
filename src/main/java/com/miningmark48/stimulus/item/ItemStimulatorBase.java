@@ -25,19 +25,27 @@ import java.util.Random;
 public abstract class ItemStimulatorBase extends Item {
 
     private int tickAmount;
+    private boolean isCreative;
 
     private Random random = new Random();
 
     public ItemStimulatorBase(int tickAmount){
         setMaxStackSize(1);
         this.tickAmount = tickAmount;
+        this.isCreative = false;
+    }
+
+    public ItemStimulatorBase(int tickAmount, boolean isCreative){
+        setMaxStackSize(1);
+        this.tickAmount = tickAmount;
+        this.isCreative = isCreative;
     }
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<String> tooltip, ITooltipFlag advanced) {
         if (KeyChecker.isHoldingShift()) {
             tooltip.add(TextFormatting.DARK_GREEN + ModTranslate.toLocal("tooltip.item.stimulator.line1"));
-            tooltip.add(TextFormatting.YELLOW + new ItemStack(ModItems.stimulator_charge).getDisplayName() + ModTranslate.toLocal("tooltip.item.stimulator.line2"));
+            if (!this.isCreative) tooltip.add(TextFormatting.YELLOW + new ItemStack(ModItems.stimulator_charge).getDisplayName() + ModTranslate.toLocal("tooltip.item.stimulator.line2"));
         }else{
             tooltip.add(ModTranslate.toLocal("tooltip.item.hold") + " " + TextFormatting.AQUA + TextFormatting.ITALIC + ModTranslate.toLocal("tooltip.item.shift"));
         }
@@ -52,7 +60,7 @@ public abstract class ItemStimulatorBase extends Item {
             Block block = state.getBlock();
             TileEntity te = world.getTileEntity(pos);
 
-            if (player.inventory.hasItemStack(new ItemStack(ModItems.stimulator_charge)) || player.isCreative()) {
+            if (player.inventory.hasItemStack(new ItemStack(ModItems.stimulator_charge)) || player.isCreative() || this.isCreative) {
                 ItemStack stack1 = ItemStack.EMPTY;
                 for (int i = 0; i <= player.inventory.getSizeInventory(); i++){
                     if (player.inventory.getStackInSlot(i).getItem() instanceof ItemStimulatorCharge) {
@@ -60,11 +68,11 @@ public abstract class ItemStimulatorBase extends Item {
                     }
                 }
 
-                if ((stack1 != null && !stack1.isEmpty() || player.isCreative())) {
+                if ((stack1 != null && !stack1.isEmpty() || player.isCreative() || this.isCreative)) {
 
                     int stimCharge = (stack1.hasTagCompound() ? stack1.getTagCompound().getInteger("charge") : 0);
 
-                    if (stimCharge >= 1 || player.isCreative()) {
+                    if (stimCharge >= 1 || player.isCreative() || this.isCreative) {
                         for (int i = 0; i < (tickAmount) / (te == null ? 5 : 1); i++) {
                             if (te == null) {
                                 block.updateTick(world, pos, state, this.random);
@@ -76,7 +84,7 @@ public abstract class ItemStimulatorBase extends Item {
                             ((ITickable) te).update();
                         }
 
-                        if (!player.isCreative()) stack1.getTagCompound().setInteger("charge", stimCharge - 1);
+                        if (!player.isCreative() && !this.isCreative) stack1.getTagCompound().setInteger("charge", stimCharge - 1);
 
                     }
                 }

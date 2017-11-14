@@ -25,6 +25,7 @@ public class ModRegistry {
         registerItem(ModItems.stimulator_4);
         registerItem(ModItems.stimulator_5);
         registerItem(ModItems.stimulator_6);
+        registerItem(ModItems.stimulator_creative);
         registerItem(ModItems.stimulator_charge);
     }
 
@@ -35,6 +36,7 @@ public class ModRegistry {
         registerItemRender(ModItems.stimulator_4);
         registerItemRender(ModItems.stimulator_5);
         registerItemRender(ModItems.stimulator_6);
+        registerItemRender(ModItems.stimulator_creative);
         registerItemRender(ModItems.stimulator_charge);
     }
 
