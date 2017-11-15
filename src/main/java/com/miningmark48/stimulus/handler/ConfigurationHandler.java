@@ -15,6 +15,7 @@ public class ConfigurationHandler {
     public static boolean hasRecipe;
     public static boolean useExpensiveRecipe;
     public static int tickAmount;
+    public static float dustDropChance;
 
     public static int multiplier;
 
@@ -44,6 +45,8 @@ public class ConfigurationHandler {
         tickAmount = configuration.getInt("Tick Amount Base", Configuration.CATEGORY_GENERAL, 5, 1, Integer.MAX_VALUE, "Amount of times the block is ticked.");
 
         multiplier = configuration.getInt("Multiplier", Configuration.CATEGORY_GENERAL, 2, 1, Integer.MAX_VALUE, "Multiplier for the amount of charge applied per item.");
+
+        dustDropChance = configuration.getFloat("Stimulation Dust Drop Chance", Configuration.CATEGORY_GENERAL, 0.5f, 0.0f, 1.0f, "Chance for Stimulation Dust to drop from Redstone Ore.");
 
         if (configuration.hasChanged()){
             configuration.save();
