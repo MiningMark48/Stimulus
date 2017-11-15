@@ -12,7 +12,6 @@ public class ConfigurationHandler {
 
     public static Configuration configuration;
 
-    public static boolean useExpensiveRecipe;
     public static int tickAmount;
     public static int dustDropAmount;
     public static float dustDropChance;
@@ -40,7 +39,6 @@ public class ConfigurationHandler {
 
     private static void loadConfiguration(){
 
-        useExpensiveRecipe = configuration.getBoolean("Use Expensive Recipe", Configuration.CATEGORY_GENERAL, false, "Use the more expensive recipe.");
         tickAmount = configuration.getInt("Tick Amount Base", Configuration.CATEGORY_GENERAL, 5, 1, Integer.MAX_VALUE, "Amount of times the block is ticked.");
 
         multiplier = configuration.getInt("Multiplier", Configuration.CATEGORY_GENERAL, 2, 1, Integer.MAX_VALUE, "Multiplier for the amount of charge applied per item.");
