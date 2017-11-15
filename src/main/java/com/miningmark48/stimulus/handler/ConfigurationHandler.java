@@ -1,5 +1,6 @@
 package com.miningmark48.stimulus.handler;
 
+import com.miningmark48.mininglib.utility.ModTranslate;
 import com.miningmark48.stimulus.reference.Reference;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
@@ -39,12 +40,12 @@ public class ConfigurationHandler {
 
     private static void loadConfiguration(){
 
-        tickAmount = configuration.getInt("Tick Amount Base", Configuration.CATEGORY_GENERAL, 5, 1, Integer.MAX_VALUE, "Amount of times the block is ticked.");
+        tickAmount = configuration.getInt(ModTranslate.toLocal("config.tickAmount.title"), Configuration.CATEGORY_GENERAL, 5, 1, Integer.MAX_VALUE, ModTranslate.toLocal("config.tickAmount.desc"));
 
-        multiplier = configuration.getInt("Multiplier", Configuration.CATEGORY_GENERAL, 2, 1, Integer.MAX_VALUE, "Multiplier for the amount of charge applied per item.");
+        multiplier = configuration.getInt(ModTranslate.toLocal("config.multiplier.title"), Configuration.CATEGORY_GENERAL, 2, 1, Integer.MAX_VALUE, ModTranslate.toLocal("config.multiplier.desc"));
 
-        dustDropAmount = configuration.getInt("Stimulation Dust Drop Amount", Configuration.CATEGORY_GENERAL, 6, 1, Integer.MAX_VALUE, "Max amount of Stimulation Dust than can be dropped from Redstone Ore.");
-        dustDropChance = configuration.getFloat("Stimulation Dust Drop Chance", Configuration.CATEGORY_GENERAL, 0.5f, 0.0f, 1.0f, "Chance for Stimulation Dust to drop from Redstone Ore.");
+        dustDropAmount = configuration.getInt(ModTranslate.toLocal("config.dustDropAmount.title"), Configuration.CATEGORY_GENERAL, 6, 1, Integer.MAX_VALUE, ModTranslate.toLocal("config.dustDropAmount.desc"));
+        dustDropChance = configuration.getFloat(ModTranslate.toLocal("config.dustDropChance.title"), Configuration.CATEGORY_GENERAL, 0.5f, 0.0f, 1.0f, ModTranslate.toLocal("config.dustDropChance.desc"));
 
         if (configuration.hasChanged()){
             configuration.save();

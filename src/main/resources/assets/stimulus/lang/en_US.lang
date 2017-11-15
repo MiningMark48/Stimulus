@@ -33,3 +33,13 @@ tooltip.item.stimulation_dust.line1=Has a chance of dropping from Redstone Ore.
 chat.item.stimulator_charge.added= charge added.
 chat.item.stimulator_charge.missingItem.p1=No 
 chat.item.stimulator_charge.missingItem.p2= in your inventory!
+
+#Configs
+config.tickAmount.title=Tick Amount Base
+config.tickAmount.desc=Amount of times the block is ticked.
+config.multiplier.title=Battery Multiplier
+config.multiplier.desc=Multiplier for the amount of charge applied per item.
+config.dustDropAmount.title=Stimulation Dust Drop Amount
+config.dustDropAmount.desc=Max amount of Stimulation Dust than can be dropped from Redstone Ore.
+config.dustDropChance.title=Stimulation Dust Drop Chance
+config.dustDropChance.desc=Chance for Stimulation Dust to drop from Redstone Ore.
