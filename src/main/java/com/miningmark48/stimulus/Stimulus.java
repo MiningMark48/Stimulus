@@ -4,7 +4,6 @@ import com.miningmark48.stimulus.handler.ConfigurationHandler;
 import com.miningmark48.stimulus.handler.EventBlockBroken;
 import com.miningmark48.stimulus.init.ModItems;
 import com.miningmark48.stimulus.init.ModRegistry;
-import com.miningmark48.stimulus.init.Recipes;
 import com.miningmark48.stimulus.proxy.CommonProxy;
 import com.miningmark48.stimulus.reference.Reference;
 import net.minecraftforge.common.MinecraftForge;
@@ -46,6 +45,5 @@ public class Stimulus {
     public void init(FMLInitializationEvent event) {
         proxy.registerRenders();
         proxy.init();
-        Recipes.init();
     }
 }

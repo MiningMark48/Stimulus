@@ -12,7 +12,6 @@ public class ConfigurationHandler {
 
     public static Configuration configuration;
 
-    public static boolean hasRecipe;
     public static boolean useExpensiveRecipe;
     public static int tickAmount;
     public static int dustDropAmount;
@@ -41,7 +40,6 @@ public class ConfigurationHandler {
 
     private static void loadConfiguration(){
 
-        hasRecipe = configuration.getBoolean("Has recipe?", Configuration.CATEGORY_GENERAL, true, "Does the Stimulator have a recipe?");
         useExpensiveRecipe = configuration.getBoolean("Use Expensive Recipe", Configuration.CATEGORY_GENERAL, false, "Use the more expensive recipe.");
         tickAmount = configuration.getInt("Tick Amount Base", Configuration.CATEGORY_GENERAL, 5, 1, Integer.MAX_VALUE, "Amount of times the block is ticked.");
 
